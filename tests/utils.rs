@@ -24,6 +24,7 @@ mod utils {
         let key = PrivateKeyDer::from_pem_slice(EE_KEY.as_bytes()).unwrap();
         let sconfig = ServerConfig::builder()
             .with_no_client_auth()
+            .with_no_fido()
             .with_single_cert(cert, key)
             .unwrap();
 

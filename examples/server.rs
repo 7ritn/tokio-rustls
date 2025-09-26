@@ -47,6 +47,7 @@ async fn main() -> Result<(), Box<dyn StdError + Send + Sync + 'static>> {
 
     let config = rustls::ServerConfig::builder()
         .with_no_client_auth()
+        .with_no_fido()
         .with_single_cert(certs, key)?;
     let acceptor = TlsAcceptor::from(Arc::new(config));
 
